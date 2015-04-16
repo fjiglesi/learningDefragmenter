@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="LearnigDefragmenterAPP">
+<head>
+<title>TODO supply a title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<!--Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="lib/twitter-bootstrap/css/bootstrap.css">
+<!--Custom styles for this template -->
+<style type="text/css">
+body, html, .main-display-area, .col-md-10 {
+	height: 100%;
+}
+
+.main-display-area {
+	padding-top: 70px;
+}
+</style>
+</head>
+<body ng-controller="UserDefragmenterSelection">
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<button type="button" class="btn btn-default btn-lg"
+				ng-click="defragment">
+				<span class="glyphicon glyphicon-save"></span> Star
+			</button>
+			<button type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-bell"></span>
+			</button>
+
+		</div>
+	</nav>
+
+	<div class="container-fluid main-display-area">
+		<div class="row ">
+			<div class="col-md-2">
+				<ul class="nav nav-sidebar">
+
+
+					<li class="active"></li>
+					<li><a href="#"> Content </a></li>
+					<li><a href="#"> Structure </a></li>
+					<li><a href="#"> Didactic </a></li>
+
+				</ul>
+			</div>
+			<div class="col-md-10" id='include-from-outside'>
+				<div ng-controller="UserDefragmenterSelection" id="frameContainer"
+					class="main-display-area embed-responsive embed-responsive-16by9">
+					<div id="main-content-area" style="width: 100%; height: 100%; position: absolute;"></div>
+					<!--  <iframe sandbox="" class="embed-responsive-item"
+						src="http://www.mit.edu/" frameborder="1" id="mainFrame"
+						name="mainFrame"
+						style="width: 100%; height: 100%; position: absolute;"
+						allowfullscreen></iframe>-->
+
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript"
+	src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
+<script type="text/javascript">
+	$('#main-content-area').load('http://localhost:8080/ResourceSenderServlet?resource=http://www.mit.edu/');
+</script>
+</html>
